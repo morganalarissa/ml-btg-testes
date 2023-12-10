@@ -23,7 +23,7 @@ namespace btg_testes_auto
                     motoristas.Add(pessoa);
                     if (motoristas.Count == 2)
                     {
-                        return $"Uhuu! Os motorista são {motoristas[0].Nome} e {motoristas[1].Nome}";
+                        return $"Uhuu! Os motoristas são {motoristas[0].Nome} e {motoristas[1].Nome}";
                     }
                 }
             }

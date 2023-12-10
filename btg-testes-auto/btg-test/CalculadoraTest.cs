@@ -33,50 +33,50 @@ namespace btg_test
             Assert.Equal(4, resultado);
         }
 
-        //[Fact]
-        //public void Somar_ListaValida_RetornaNumerosSomados()
-        //{
-        //    // Arrange
-        //    List<double> listaValores = new() { 5, 5, 2, 3 };
+        [Fact]
+        public void Somar_ListaValida_RetornaNumerosSomados()
+        {
+            // Arrange
+            List<double> listaValores = new() { 5, 5, 2, 3 };
 
-        //    Calculadora calculadora = new();
+            Calculadora calculadora = new();
 
-        //    // Act
-        //    double resultado = calculadora.Somar(listaValores);
+            // Act
+            double resultado = calculadora.Somar(listaValores);
 
-        //    // Assert
-        //    Assert.Equal(15, resultado);
-        //}
+            // Assert
+            Assert.Equal(15, resultado);
+        }
 
-        //[Fact]
-        //public void Subtrair_NumerosValidos_RetornaNumerosSubstraidos()
-        //{
-        //    // Arrange
-        //    Calculadora calculadora = new()
-        //    {
-        //        numero1 = 5,
-        //        numero2 = 2
-        //    };
+        [Fact]
+        public void Subtrair_NumerosValidos_RetornaNumerosSubstraidos()
+        {
+            // Arrange
+            Calculadora calculadora = new()
+            {
+                numero1 = 5,
+                numero2 = 2
+            };
 
-        //    // Act
-        //    double resultado = calculadora.Subtrair();
+            // Act
+            double resultado = calculadora.Subtrair();
 
-        //    // Assert
-        //    Assert.Equal(3, resultado);
-        //}
+            // Assert
+            Assert.Equal(3, resultado);
+        }
 
-        //[Fact]
-        //public void Multiplicar_NumerosValores_RetornaNumerosMultiplicados()
-        //{
-        //    // Arrange
-        //    Calculadora calculadora = new(2, 2);
+        [Fact]
+        public void Multiplicar_NumerosValores_RetornaNumerosMultiplicados()
+        {
+            // Arrange
+            Calculadora calculadora = new(2, 2);
 
-        //    // Act
-        //    double resultado = calculadora.Multiplicar();
+            // Act
+            double resultado = calculadora.Multiplicar();
 
-        //    // Assert
-        //    Assert.Equal(4, resultado);
-        //}
+            // Assert
+            Assert.Equal(4, resultado);
+        }
 
         [Fact]
         public void Dividir_NumerosValidos_RetornaNumeroDividido()
