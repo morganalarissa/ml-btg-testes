@@ -9,76 +9,72 @@ namespace btg_test
 {
     public class MeiaCinemaTest
     {
-        [Theory]
-        [InlineData(true, false, false, false)]
+        [Fact]
         [Trait("Perfil", "Estudante")]
-        public void VerificarMeiaCinema_Estudante_DeveRetornarTrue(bool estudante, bool doadorDeSangue, bool trabalhadorPrefeitura, bool contratoPrefeitura)
+        public void VerificarMeiaCinema_Estudante_DeveRetornarTrue()
         {
             // Arrange
+            
             MeiaCinema meiaCinema = new MeiaCinema();
 
             // Act
-            bool resultado = meiaCinema.VerificarMeiaCinema(estudante, doadorDeSangue, trabalhadorPrefeitura, contratoPrefeitura);
+            bool resultado = meiaCinema.VerificarMeiaCinema(true, false, false, false);
 
             // Assert
             Assert.True(resultado);
         }
 
-        [Theory]
-        [InlineData(false, true, false, false)]
+        [Fact]
         [Trait("Perfil", "Doador de Sangue")]
-        public void VerificarMeiaCinema_DoadorDeSangue_DeveRetornarTrue(bool estudante, bool doadorDeSangue, bool trabalhadorPrefeitura, bool contratoPrefeitura)
+        public void VerificarMeiaCinema_DoadorDeSangue_DeveRetornarTrue()
         {
             // Arrange
             MeiaCinema meiaCinema = new MeiaCinema();
 
             // Act
-            bool resultado = meiaCinema.VerificarMeiaCinema(estudante, doadorDeSangue, trabalhadorPrefeitura, contratoPrefeitura);
+            bool resultado = meiaCinema.VerificarMeiaCinema(false, true, false, false);
 
             // Assert
             Assert.True(resultado);
         }
 
-        [Theory]
-        [InlineData(false, false, true, true)]
+        [Fact]        
         [Trait("Perfil", "TrabalhadorPrefeituraComContrato")]
-        public void VerificarMeiaCinema_TrabalhadorPrefeituraComContrato_DeveRetornarTrue(bool estudante, bool doadorDeSangue, bool trabalhadorPrefeitura, bool contratoPrefeitura)
+        public void VerificarMeiaCinema_TrabalhadorPrefeituraComContrato_DeveRetornarTrue()
         {
             // Arrange
             MeiaCinema meiaCinema = new MeiaCinema();
 
             // Act
-            bool resultado = meiaCinema.VerificarMeiaCinema(estudante, doadorDeSangue, trabalhadorPrefeitura, contratoPrefeitura);
+            bool resultado = meiaCinema.VerificarMeiaCinema(false, false, true, true);
 
             // Assert
             Assert.True(resultado);
         }
 
-        [Theory]
-        [InlineData(false, false, true, false)]
+        [Fact]        
         [Trait("Perfil", "TrabalhadorPrefeituraSemContrato")]
-        public void VerificarMeiaCinema_TrabalhadorPrefeituraSemContrato_DeveRetornarFalse(bool estudante, bool doadorDeSangue, bool trabalhadorPrefeitura, bool contratoPrefeitura)
+        public void VerificarMeiaCinema_TrabalhadorPrefeituraSemContrato_DeveRetornarFalse()
         {
             // Arrange
             MeiaCinema meiaCinema = new MeiaCinema();
 
             // Act
-            bool resultado = meiaCinema.VerificarMeiaCinema(estudante, doadorDeSangue, trabalhadorPrefeitura, contratoPrefeitura);
+            bool resultado = meiaCinema.VerificarMeiaCinema(false, false, true, false);
 
             // Assert
             Assert.False(resultado);
         }
 
-        [Theory]
-        [InlineData(false, false, false, false)]
+        [Fact]        
         [Trait("Perfil", "NenhumPerfil")]
-        public void VerificarMeiaCinema_NenhumPerfil_DeveRetornarFalse(bool estudante, bool doadorDeSangue, bool trabalhadorPrefeitura, bool contratoPrefeitura)
+        public void VerificarMeiaCinema_NenhumPerfil_DeveRetornarFalse()
         {
             // Arrange
             MeiaCinema meiaCinema = new MeiaCinema();
 
             // Act
-            bool resultado = meiaCinema.VerificarMeiaCinema(estudante, doadorDeSangue, trabalhadorPrefeitura, contratoPrefeitura);
+            bool resultado = meiaCinema.VerificarMeiaCinema(false, false, false, false);
 
             // Assert
             Assert.False(resultado);

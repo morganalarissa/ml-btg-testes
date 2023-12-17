@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SonarProjectConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/analyzer/2021/1">
+  <AnalysisConfigPath>C:\Users\laril\OneDrive\Documentos\GitHub\ml-btg-testes\btg-testes-auto\.sonarqube\conf\SonarQubeAnalysisConfig.xml</AnalysisConfigPath>
+  <ProjectPath>C:\Users\laril\OneDrive\Documentos\GitHub\ml-btg-testes\btg-testes-auto\btg-testes-auto\btg-testes-auto.csproj</ProjectPath>
+  <FilesToAnalyzePath>C:\Users\laril\OneDrive\Documentos\GitHub\ml-btg-testes\btg-testes-auto\.sonarqube\conf\2\FilesToAnalyze.txt</FilesToAnalyzePath>
+  <OutPath>C:\Users\laril\OneDrive\Documentos\GitHub\ml-btg-testes\btg-testes-auto\.sonarqube\out\2</OutPath>
+  <ProjectType>Product</ProjectType>
+  <TargetFramework>net6.0</TargetFramework>
+</SonarProjectConfig>
