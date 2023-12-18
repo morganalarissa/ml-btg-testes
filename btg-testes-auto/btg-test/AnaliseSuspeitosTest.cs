@@ -19,7 +19,7 @@ namespace btg_test
         [InlineData(true, true, true, true, true, "Assassino")]
         [InlineData(false, true, false, false, true, "Suspeita")]
         [InlineData(false, true, true, false, true, "Cúmplice")]
-       // [InlineData(false, true, true, true, true, "Assassino")] com erro
+       
         public void ExecutarQuestionarioSuspeito_TesteVariado_RetornaResultadoEsperado(
             [Display(Name = "Telefonou para a vítima")] bool telefonouVitima,
             [Display(Name = "Esteve no local do crime")] bool esteveNoLocal,

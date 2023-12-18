@@ -10,7 +10,7 @@
 
             List<int> idadesMaiorQue18 = idades.Where(x => x >= 18).ToList();
 
-            return idadesMaiorQue18.Sum() / idadesMaiorQue18.Count;
+            return (decimal)idadesMaiorQue18.Sum() / idadesMaiorQue18.Count;
         }
     }
 }

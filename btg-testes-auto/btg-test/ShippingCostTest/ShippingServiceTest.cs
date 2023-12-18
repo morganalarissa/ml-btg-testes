@@ -58,5 +58,53 @@ namespace btg_test.ShippingCostTest
             _mockDeliveryCostCalculator.Received(1).CalculateCost(Arg.Is(distance), Arg.Is(deliveryType));
         }
 
+        [Fact]
+        public void CalculateShippingCost_ApplyDiscount_ReturnDiscountApplied()
+        {
+            // Arrange
+            double distance = 250;
+            DeliveryType deliveryType = DeliveryType.Express;
+            _mockDeliveryCostCalculator.CalculateCost(Arg.Any<double>(), Arg.Any<DeliveryType>()).Returns(100);
+
+            // Act
+            double result = _service.CalculateShippingCost(distance, deliveryType);
+
+            // Assert
+            result.Should().Be(50);
+        }
+
+        [Theory]
+        [InlineData(200, DeliveryType.Express)]
+        [InlineData(100, DeliveryType.Express)]
+        [InlineData(250, DeliveryType.Ordinary)]
+        [InlineData(100, DeliveryType.Ordinary)]
+        [InlineData(200, DeliveryType.Ordinary)]
+        public void CalculateShippingCost_ApplyDiscount_ReturnDiscountNotApplied(double distance, DeliveryType deliveryType)
+        {
+            // Arrange
+            _mockDeliveryCostCalculator.CalculateCost(Arg.Any<double>(), Arg.Any<DeliveryType>()).Returns(100);
+
+            // Act
+            double result = _service.CalculateShippingCost(distance, deliveryType);
+
+            // Assert
+            result.Should().Be(100);
+        }
+
+        [Fact]
+        public void CalculateShippingCost_ApplyDiscountForExpressAbove200_ReturnDiscountApplied()
+        {
+            // Arrange
+            double distance = 210; 
+            DeliveryType deliveryType = DeliveryType.Express;
+            _mockDeliveryCostCalculator.CalculateCost(Arg.Any<double>(), Arg.Any<DeliveryType>()).Returns(100);
+
+            // Act
+            double result = _service.CalculateShippingCost(distance, deliveryType);
+
+            // Assert
+            result.Should().Be(50);
+        }
+
     }
 }

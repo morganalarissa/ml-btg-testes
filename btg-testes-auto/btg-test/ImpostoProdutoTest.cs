@@ -42,5 +42,18 @@ namespace btg_test
             // Assert
             Assert.Throws<ArgumentException>(() => impostoProduto.CalcularPrecoFinal("XYZ", 100));
         }
+
+
+        [Fact]
+        public void CalcularPrecoFinal_EstadoInvalido_LancaExcecao_ComMensagemCorreta()
+        {
+            // Arrange
+            ImpostoProduto impostoProduto = new ImpostoProduto();
+
+            // Act
+            // Assert
+            var excecao = Assert.Throws<ArgumentException>(() => impostoProduto.CalcularPrecoFinal("XYZ", 100));
+            Assert.Equal("Estado inválido. Por favor, insira um estado válido.", excecao.Message);
+        }
     }
 }

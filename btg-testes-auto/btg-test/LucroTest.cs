@@ -38,5 +38,50 @@ namespace btg_test
             // Assert
             Assert.Equal(esperado, resultado);
         }
+
+        [Fact]
+        public void Calcular_LucroIgualA20_DeveRetornarValorCom30PorCentoDeLucro()
+        {
+            // Arrange
+            Lucro lucro = new Lucro();
+            decimal valorProduto = 20.0M;
+            decimal esperado = 20.0M * 1.30M;
+
+            // Act
+            decimal resultado = lucro.Calcular(valorProduto);
+
+            // Assert
+            Assert.Equal(esperado, resultado);
+        }
+
+        [Fact]
+        public void Calcular_LucroDecimalMenorQue20_DeveRetornarValorCom45PorCentoDeLucro()
+        {
+            // Arrange
+            Lucro lucro = new Lucro();
+            decimal valorProduto = 19.99M;
+            decimal esperado = 19.99M * 1.45M;
+
+            // Act
+            decimal resultado = lucro.Calcular(valorProduto);
+
+            // Assert
+            Assert.Equal(esperado, resultado);
+        }
+
+        [Fact]
+        public void Calcular_LucroDecimalMaiorOuIgualA20_DeveRetornarValorCom30PorCentoDeLucro()
+        {
+            // Arrange
+            Lucro lucro = new Lucro();
+            decimal valorProduto = 20.01M;
+            decimal esperado = 20.01M * 1.30M;
+
+            // Act
+            decimal resultado = lucro.Calcular(valorProduto);
+
+            // Assert
+            Assert.Equal(esperado, resultado);
+        }
     }
 }
